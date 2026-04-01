@@ -1,0 +1,76 @@
+/* 全屏遮罩层，覆盖所有内容 */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0e1a;  /* 深色背景，可根据喜好修改 */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', monospace;
+  color: #00ffaa;
+  transition: opacity 0.5s ease;
+}
+
+/* 终端窗口样式 */
+.terminal {
+  background: #000000aa;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  backdrop-filter: blur(5px);
+  border: 1px solid #00ffaa;
+  box-shadow: 0 0 20px rgba(0,255,170,0.3);
+}
+
+.terminal-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #00ffaa;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56;
+}
+.terminal-button:nth-child(2) { background: #ffbd2e; }
+.terminal-button:nth-child(3) { background: #27c93f; }
+
+.terminal-body {
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.terminal-body p {
+  margin: 0;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 隐藏滚动条（可选） */
+body {
+  overflow: hidden;
+}
+body.loaded {
+  overflow: auto;
+}
