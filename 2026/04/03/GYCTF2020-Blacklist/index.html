@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://relax-1626.github.io/img/Blacklist1/fengmian.jpg">
 <meta property="article:published_time" content="2026-04-03T02:18:36.000Z">
-<meta property="article:modified_time" content="2026-04-22T09:06:16.916Z">
+<meta property="article:modified_time" content="2026-04-22T10:46:26.573Z">
 <meta property="article:author" content="Fantasy.">
 <meta property="article:tag" content="SQL注入">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "https://relax-1626.github.io/2026/04/03/GYCTF2020-Blacklist/",
   "image": "https://relax-1626.github.io/img/Blacklist1/fengmian.jpg",
   "datePublished": "2026-04-03T02:18:36.000Z",
-  "dateModified": "2026-04-22T09:06:16.916Z",
+  "dateModified": "2026-04-22T10:46:26.573Z",
   "author": [
     {
       "@type": "Person",
@@ -159,88 +159,117 @@
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
-}</script><link rel="stylesheet" href="/css/preloader.css"><script src="/js/preloader.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="preloader"><div class="terminal"><div class="terminal-header"><div class="terminal-button"></div><div class="terminal-button"></div><div class="terminal-button"></div></div><div class="terminal-body"><p>启动中...</p></div></div></div><div class="bg-animation" id="web_bg" style="background-image: url(/img/bak.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/liang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 晤初</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 拾岁</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分笺</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 晤心</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/Blacklist1/top.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Fantasy.'s Home</span></a><a class="nav-page-title" href="/"><span class="site-name">[GYCTF2020]Blacklist1</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 晤初</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 拾岁</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分笺</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 晤心</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">[GYCTF2020]Blacklist1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-03T02:18:36.000Z" title="发表于 2026-04-03 10:18:36">2026-04-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-22T09:06:16.916Z" title="更新于 2026-04-22 17:06:16">2026-04-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF%E9%A2%98%E8%A7%A3/">CTF题解</a></span></div><div class="meta-secondline"><!--else if theme.busuanzi.page_pv+pvBlock('', 'post-meta-pv-cv', '')
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/preloader.css"><script src="/js/preloader.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="preloader"><div class="terminal"><div class="terminal-header"><div class="terminal-button"></div><div class="terminal-button"></div><div class="terminal-button"></div></div><div class="terminal-body"><p>启动中...</p></div></div></div><div class="bg-animation" id="web_bg" style="background-image: url(/img/bak.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/liang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 晤初</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 拾岁</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分笺</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 晤心</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/Blacklist1/top.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Fantasy.'s Home</span></a><a class="nav-page-title" href="/"><span class="site-name">[GYCTF2020]Blacklist1</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 晤初</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 拾岁</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分笺</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 晤心</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">[GYCTF2020]Blacklist1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-03T02:18:36.000Z" title="发表于 2026-04-03 10:18:36">2026-04-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-22T10:46:26.573Z" title="更新于 2026-04-22 18:46:26">2026-04-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF%E9%A2%98%E8%A7%A3/">CTF题解</a></span></div><div class="meta-secondline"><!--else if theme.busuanzi.page_pv+pvBlock('', 'post-meta-pv-cv', '')
   span#busuanzi_value_page_pv
     i.fa-solid.fa-spinner.fa-spin
---></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="GYCTF2020-Blacklist1"><a href="#GYCTF2020-Blacklist1" class="headerlink" title="[GYCTF2020]Blacklist1"></a>[GYCTF2020]Blacklist1</h1><pre><code>虽然这个题目并不难，但是涉及的知识面很广，值得整理。
-首先进入页面，输入数字点击查询，页面图如下：
+--></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="GYCTF2020-Blacklist1"><a href="#GYCTF2020-Blacklist1" class="headerlink" title="[GYCTF2020]Blacklist1"></a>[GYCTF2020]Blacklist1</h1><p>虽然这个题目并不难，但是涉及的知识面很广，值得整理。</p>
+<p>首先进入页面，输入数字点击查询，页面图如下：</p>
+<p><img src="/img/Blacklist1/1.png" alt="页面正常查询回显"></p>
+<p>发现传参在url中，可以通过一些工具来进行后续步骤（这里使用HackBar）。<br>单引号闭合并添加注释符都成功而且没有过滤。<br>这个时候其实选择什么注入手法都可以尝试下。</p>
+<p>尝试联合查询，发现被过滤了：</p>
+<p><img src="/img/Blacklist1/2.png" alt="函数过滤"></p>
+<p>过滤了很多。</p>
+<p>总结信息，<code>show</code> 没有被过滤，可以使用 <code>show</code> 来查库查表查字段，也可以用 <code>extractvalue</code>，<code>updatexml</code> 等报错结合 <code>database()</code> 来查询当前数据库。</p>
+<p>本来是想试试用报错看看当前数据库名，然后无意间发现了一点其他知识：</p>
+<pre><code>inject=-1&#39; and extractvalue(1,database())--+
 </code></pre>
-<p><img src="/img/Blacklist1/1.png" alt="页面正常查询回显"><br>    发现传参在url中，可以通过一些工具来进行后续步骤（这里使用HackBar）<br>    单引号闭合并添加注释符都成功而且没有过滤。<br>    这个时候其实选择什么注入手法都可以尝试下。<br>    尝试联合查询，发现被过滤了：<br><img src="/img/Blacklist1/2.png" alt="函数过滤"><br>    过滤了很多。<br>    总结信息，show没有被过滤可以使用show来查库查表查字段，也可以用extractvalue，updatexml等报错结合database()来查询当前数据库。<br>    本来是想试试用报错看看当前数据库名，然后无意间发现了一点其他知识：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inject<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; and extractvalue(1,database())--+</span></span><br></pre></td></tr></table></figure>
-<pre><code>没回显？难道必须要concat(0x7e,(database()),0x7e)?
-好奇去搜索了一下报错原理：
-    extractvalue()、updatexml()函数用于从XML字符串中提取值，它的第二参数是一个XPath表达式。当XPath表达式不合法时，函数就会报错并返回错误信息，其中会包含道中错误的表达式片段。
-    当XPath表达式只为database()时，返回当前数据库名，例如test，这个字符串由字母、数字和下划线组成，在XPath中可以被解释为一个合法的节点名。因此不会触发XPath语法错误，函数只会尝试在XML中查找该节点，而第一个参数1不是有效地XML，最终返回NULL或者空，不会报错。这样没有错误信息，就不会返回报错。
-那什么情况下XPath会语法错误？
-    1、非法名称字符：
-        ~,!（除非!=）,@（不在开头）,#,%,^,&amp;,*（不在乘号位置）,`,?等等。
-    2、未转义的特殊符号：
-        单独出现的&#39;或&quot;不成对。
-    3、括号不匹配。
-    4、运算符连续错误。
-    5、路径中以非法字符开头。
-诸如以上等等。
-问题解决，并且已知数据库名为supersqli。（用show databases;堆叠也可以查出来。）
-下一步解决查询内容问题，既然select已经被禁用了，那怎么办？
-答：使用handler。
-handler是mysql专门用于从指定表中按索引顺序逐行读取数据的低级别存储引擎接口。虽然不具备select的完整功能，但是handler是为直接访问表存储引擎而设计的。handler必须打开一个具体的表才能执行读取操作。
-语法如下：(中括号中代表可选添加)
+<p>没回显？难道必须要 <code>concat(0x7e,(database()),0x7e)</code>？<br>好奇去搜索了一下报错原理：</p>
+<blockquote>
+<p><code>extractvalue()</code>、<code>updatexml()</code> 函数用于从 XML 字符串中提取值，它的第二参数是一个 XPath 表达式。当 XPath 表达式不合法时，函数就会报错并返回错误信息，其中会包含导致错误的表达式片段。<br>当 XPath 表达式只为 <code>database()</code> 时，返回当前数据库名，例如 <code>test</code>，这个字符串由字母、数字和下划线组成，在 XPath 中可以被解释为一个合法的节点名。因此不会触发 XPath 语法错误，函数只会尝试在 XML 中查找该节点，而第一个参数 1 不是有效的 XML，最终返回 NULL 或者空，不会报错。这样没有错误信息，就不会返回报错。</p>
+</blockquote>
+<p>那什么情况下 XPath 会语法错误？</p>
+<ul>
+<li>非法名称字符：<code>~</code>、<code>!</code>（除非 <code>!=</code>）、<code>@</code>（不在开头）、<code>#</code>、<code>%</code>、<code>^</code>、<code>&amp;</code>、<code>*</code>（不在乘号位置）、<code>`</code>、<code>?</code> 等等。</li>
+<li>未转义的特殊符号：单独出现的 <code>&#39;</code> 或 <code>&quot;</code> 不成对。</li>
+<li>括号不匹配。</li>
+<li>运算符连续错误。</li>
+<li>路径中以非法字符开头。</li>
+</ul>
+<p>问题解决，并且已知数据库名为 <code>supersqli</code>（用 <code>show databases;</code> 堆叠也可以查出来）。</p>
+<p>下一步解决查询内容问题，既然 <code>select</code> 已经被禁用了，那怎么办？<br>答：使用 <code>handler</code>。</p>
+<p><code>handler</code> 是 MySQL 专门用于从指定表中按索引顺序逐行读取数据的低级别存储引擎接口。虽然不具备 <code>select</code> 的完整功能，但是 <code>handler</code> 是为直接访问表存储引擎而设计的。<code>handler</code> 必须打开一个具体的表才能执行读取操作。</p>
+<p>语法如下（中括号代表可选添加）：</p>
+<pre><code>handler tbl_name open [ [as] alias ]
+handler tbl_name read index_name &#123; = | &lt;= | &gt;= | &lt; | &gt; &#125; (value1,value2,...)
+    [ where where_condition ] [limit ...]
+handler tbl_name read index_name &#123; first | next | prev | last &#125;
+    [ where where_condition ] [limit ...]
+handler tbl_name read &#123; first | next &#125;
+    [ where where_condition ] [limit ...]
+handler tbl_name close
 </code></pre>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handler tbl_name <span class="keyword">open</span> [ [<span class="keyword">as</span>] alias ]</span><br><span class="line">handler tbl_name read index_name &#123; <span class="operator">=</span> <span class="operator">|</span> <span class="operator">&lt;=</span> <span class="operator">|</span> <span class="operator">&gt;=</span> <span class="operator">|</span> <span class="operator">&lt;</span> <span class="operator">|</span><span class="operator">&gt;</span>&#125; (value1,value2,...)</span><br><span class="line">    [ <span class="keyword">where</span> where_condition ] [limit ...]</span><br><span class="line">handler tbl_name read index_name &#123; <span class="keyword">first</span> <span class="operator">|</span> next <span class="operator">|</span> prev <span class="operator">|</span> <span class="keyword">last</span> &#125;</span><br><span class="line">    [ <span class="keyword">where</span> where_condition ] [limit ...]</span><br><span class="line">handler tbl_name read &#123; <span class="keyword">first</span> <span class="operator">|</span> next &#125;</span><br><span class="line">    [ <span class="keyword">where</span> where_condition ] [limit ...]</span><br><span class="line">handler tbl_name <span class="keyword">close</span></span><br></pre></td></tr></table></figure>
-<pre><code>handler不支持无表查询。每次read操作只默认返回一条记录，如果要返回多条需要制定limit子句。不支持分区表。
-
-有了方法，接下来查表名：
+<p><code>handler</code> 不支持无表查询。每次 <code>read</code> 操作只默认返回一条记录，如果要返回多条需要指定 <code>limit</code> 子句。不支持分区表。</p>
+<p>有了方法，接下来查表名：</p>
+<pre><code>inject=-1&#39;;show tables from supersqli;--+
 </code></pre>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inject<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27;;show tables from supersqli;--+</span></span><br></pre></td></tr></table></figure>
-<pre><code>发现FlagHere表，使用handler和堆叠进行查询。
+<p>发现 <code>FlagHere</code> 表，使用 <code>handler</code> 和堆叠进行查询：</p>
+<pre><code>inject=-1&#39;;handler FlagHere open;handler FlagHere read first;--+
 </code></pre>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inject<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27;;handler FlagHere open;handler FlagHere read first;--+</span></span><br></pre></td></tr></table></figure>
-<pre><code>获得flag。
+<p>获得 flag。</p>
+<hr>
+<h2 id="除了-handler，想要绕过-select，可以从哪里入手呢？"><a href="#除了-handler，想要绕过-select，可以从哪里入手呢？" class="headerlink" title="除了 handler，想要绕过 select，可以从哪里入手呢？"></a>除了 <code>handler</code>，想要绕过 <code>select</code>，可以从哪里入手呢？</h2><ol>
+<li><p><strong>MySQL 8.0 新语法：<code>table</code> 语句和 <code>values</code> 语句</strong><br><code>table</code> 语句是 <code>select * from tbl_name</code> 的语法糖，专门用于快速、简单地查询一个表中的所有数据。非常适合需要快速查看表内容。<br><code>values</code> 语句可以将提供的一组常量值直接构造成一个虚拟的数据表，非常灵活，在构造临时数据集或与其他查询进行联合时特别有用。<br>需注意，在 MySQL 中，<code>values</code> 和 <code>table</code> 语句返回的都是“表数据”。</p>
+</li>
+<li><p><strong>存储过程与预处理语句</strong><br>存储过程与动态 SQL：存储过程是数据库中的一段预编译程序。可以在其中避开 <code>select</code> 关键字，通过 <code>prepare</code>，<code>execute</code> 和 <code>deallocate prepare</code> 语句来执行动态 SQL。</p>
+<pre><code> -- 创建一个存储过程，接收 sql 语句作为参数
+ create procedure execute_sql(in sql_query text)
+ begin
+     set @query = sql_query;
+     prepare stmt from @query;
+     execute stmt;
+     deallocate prepare stmt;
+ end;
 
-
-
-那么除了handler，想要绕过select，可以从哪里入手呢？
-    1、MYSQL8.0新语法：table语句和values语句。
-        table语句是select * from tbl_name的语法糖，专门用于快速、简单的查询一个表中的所有数据。非常适合在需要快速查看表内容。
-        values语句可以将提供的一组常量值直接构造成一个虚拟的数据表，非常灵活，在构造临时数据集或与其他查询进行联合时特别有用。
-    需注意，在MYSQL中，values和table语句返回的都是“表数据”。
-
-    2、存储过程与预处理语句。
-        存储过程与动态SQL：存储过程是数据库中的一段预编译程序。可以在其中避开select关键字，通过prepare，execute和deallocate prepare语句来执行动态sql。
+ -- 调用存储过程来执行被禁用的 select 查询
+ call execute_sql(&#39;select * from users&#39;);
 </code></pre>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">创建一个存储过程，接收<span class="keyword">sql</span>语句作为参数</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> execute_sql(<span class="keyword">in</span> sql_query text)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">set</span> <span class="variable">@query</span> <span class="operator">=</span> sql_query;</span><br><span class="line">    <span class="keyword">prepare</span> stmt <span class="keyword">from</span> <span class="variable">@query</span>;</span><br><span class="line">    <span class="keyword">execute</span> stmt;</span><br><span class="line">    <span class="keyword">deallocate</span> <span class="keyword">prepare</span> stmt;</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line">调用存储过程来执行被禁用的<span class="keyword">select</span>查询</span><br><span class="line"><span class="keyword">call</span> execute_sql(<span class="string">&#x27;select * from users&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<pre><code>    由于select被包裹在存储过程中，外层sql过滤器可能无法识别并阻止它，这种方法常用于在数据库权限受限或关键字被过滤的场景下，实现复杂的逻辑操作。
-
-    3、报错注入：
-        典型函数：extractvalue();updatexml(),geometrycollection()等等
-    4、文件读写：
-        如果数据库用户有file权限，且secure_file_priv允许，也可以：
-        写文件：
+<p>由于 <code>select</code> 被包裹在存储过程中，外层 SQL 过滤器可能无法识别并阻止它。这种方法常用于在数据库权限受限或关键字被过滤的场景下，实现复杂的逻辑操作。</p>
+</li>
+<li><p><strong>报错注入</strong><br>典型函数：<code>extractvalue()</code>；<code>updatexml()</code>；<code>geometrycollection()</code> 等。</p>
+</li>
+<li><p><strong>文件读写</strong><br>如果数据库用户有 <code>file</code> 权限，且 <code>secure_file_priv</code> 允许，也可以：</p>
+<p>写文件：</p>
+<pre><code> -- 利用 MySQL 的 into outfile 结合预处理语句
+ set @sql = &#39;select * from users into outfile &quot;...&quot;&#39;;
+ prepare stmt from @sql;
+ execute stmt;
 </code></pre>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 利用MySql的into outfile结合预处理语句。</span></span><br><span class="line"><span class="keyword">set</span>  <span class="variable">@sql</span> <span class="operator">=</span> <span class="string">&#x27;select * from users into outfile &quot;...&quot;&#x27;</span></span><br><span class="line"><span class="keyword">prepare</span> stmt <span class="keyword">from</span> <span class="variable">@sql</span>;</span><br><span class="line"><span class="keyword">execute</span> stmt;</span><br></pre></td></tr></table></figure>
-<pre><code>        或者利用日志写马，若开启了general log，可以设置log文件为web目录下的php文件，然后执行出发sql写webshell。
+<p>或者利用日志写马：若开启了 <code>general log</code>，可以设置 log 文件为 web 目录下的 php 文件，然后执行触发 SQL 写 webshell。</p>
+</li>
+</ol>
+<hr>
+<h2 id="另外补充一些基础绕过"><a href="#另外补充一些基础绕过" class="headerlink" title="另外补充一些基础绕过"></a>另外补充一些基础绕过</h2><ol>
+<li><p><strong>语法变体</strong>  </p>
+<ul>
+<li>大小写混淆：<code>SelEct</code>  </li>
+<li>注释符插入：<code>sel/**/ect</code>  </li>
+<li>URL&#x2F;Hex 编码：<code>%53%45%4c%45%43%54</code>  </li>
+<li>内联注释：<code>/*!50000 select*/</code></li>
+</ul>
+</li>
+<li><p><strong>空格绕过</strong>  </p>
+<ul>
+<li>使用特殊空白字符：TAB（<code>%09</code>）、换行（<code>%0a</code>）、回车（<code>%0d</code>）  </li>
+<li>使用括号  </li>
+<li>使用浮点数</li>
+</ul>
+</li>
+<li><p><strong>引号绕过</strong>  </p>
+<ul>
+<li>十六进制编码  </li>
+<li>PostgreSQL 美元符：<code>select $$test$$</code></li>
+</ul>
+</li>
+<li><p><strong>逗号绕过</strong><br>使用 <code>join</code> 或 <code>offset</code> 代替逗号：</p>
+<pre><code> -- 代替 union select 1,2,3
+ union select * from (select 1)a join (select 2)b join (select 3)c
 
-
-
-另外补充一些基础绕过：
-    1、语法变体：
-        大小写混淆：SelEct
-        注释符插入：sel/**/ect
-        url/Hex编码：%53%45%4c%45%43%54
-        内联注释：/*!50000 select*/
-    2、空格绕过：
-        使用特殊空白字符：TAB（%09）、换行（%0a）、回车（%0d）
-        使用括号
-        使用浮点数
-    3、引号绕过：
-        十六进制编码
-        PostgreSQL美元符：select $$test$$
-    4、逗号绕过：
-        使用join或offset代替逗号：
+ -- 代替 limit 1,2
+ limit 1 offset 2
 </code></pre>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--代替 union select 1,2,3</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> (<span class="keyword">select</span> <span class="number">1</span>)a <span class="keyword">join</span> (<span class="keyword">select</span> <span class="number">2</span>)b <span class="keyword">join</span> (<span class="keyword">select</span> <span class="number">3</span>)c</span><br><span class="line"></span><br><span class="line"><span class="comment">--代替 limit 1,2</span></span><br><span class="line">limit <span class="number">1</span> <span class="keyword">offset</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<pre><code>    5、逻辑运算符绕过：
-        当&gt;、&lt;、=被过滤时，使用 greatest()、strcmp()、between...and或like等函数或关键字替代。
-</code></pre>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://relax-1626.github.io">Fantasy.</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://relax-1626.github.io/2026/04/03/GYCTF2020-Blacklist/">https://relax-1626.github.io/2026/04/03/GYCTF2020-Blacklist/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://relax-1626.github.io" target="_blank">Fantasy.'s Home</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SQL%E6%B3%A8%E5%85%A5/">SQL注入</a></div><div class="post-share"><div class="social-share" data-image="/img/Blacklist1/fengmian.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable"><img class="cover" src="/img/Cookieissostable/fengmian.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">[BJDCTF2020]Cookieissostable</div></div><div class="info-2"><div class="info-item-1">总结SSTI问题</div></div></div></a><a class="pagination-related" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1"><img class="cover" src="/img/NiZhuanSiWei/fengmian.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">[ZJCTF 2019]NiZhuanSiWei1</div></div><div class="info-2"><div class="info-item-1">本文解析如何通过PHP伪协议和反序列化漏洞，绕过源码限制，利用data://和php://filter构造payload获得flag。</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/liang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Fantasy.</div><div class="author-info-description">A technology blog</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Relax-1626"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到Fantasy.的博客，如有错误及其他问题请大佬多多指教！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GYCTF2020-Blacklist1"><span class="toc-number">1.</span> <span class="toc-text">[GYCTF2020]Blacklist1</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable"><img src="/img/Cookieissostable/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[BJDCTF2020]Cookieissostable"/></a><div class="content"><a class="title" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable">[BJDCTF2020]Cookieissostable</a><time datetime="2026-04-22T01:53:45.000Z" title="发表于 2026-04-22 09:53:45">2026-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/03/GYCTF2020-Blacklist/" title="[GYCTF2020]Blacklist1"><img src="/img/Blacklist1/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[GYCTF2020]Blacklist1"/></a><div class="content"><a class="title" href="/2026/04/03/GYCTF2020-Blacklist/" title="[GYCTF2020]Blacklist1">[GYCTF2020]Blacklist1</a><time datetime="2026-04-03T02:18:36.000Z" title="发表于 2026-04-03 10:18:36">2026-04-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1"><img src="/img/NiZhuanSiWei/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[ZJCTF 2019]NiZhuanSiWei1"/></a><div class="content"><a class="title" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1">[ZJCTF 2019]NiZhuanSiWei1</a><time datetime="2026-04-01T02:57:38.000Z" title="发表于 2026-04-01 10:57:38">2026-04-01</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"></div><div class="footer_custom_text">萌新菜鸟希望有问题多多指正</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><!--if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pvscript(async data-pjax src=theme.asset.busuanzi ? url_for(theme.asset.busuanzi) : '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+</li>
+<li><p><strong>逻辑运算符绕过</strong><br>当 <code>&gt;</code>、<code>&lt;</code>、<code>=</code> 被过滤时，使用 <code>greatest()</code>、<code>strcmp()</code>、<code>between...and</code> 或 <code>like</code> 等函数或关键字替代。</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://relax-1626.github.io">Fantasy.</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://relax-1626.github.io/2026/04/03/GYCTF2020-Blacklist/">https://relax-1626.github.io/2026/04/03/GYCTF2020-Blacklist/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://relax-1626.github.io" target="_blank">Fantasy.'s Home</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SQL%E6%B3%A8%E5%85%A5/">SQL注入</a></div><div class="post-share"><div class="social-share" data-image="/img/Blacklist1/fengmian.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable"><img class="cover" src="/img/Cookieissostable/fengmian.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">[BJDCTF2020]Cookieissostable</div></div><div class="info-2"><div class="info-item-1">总结SSTI问题</div></div></div></a><a class="pagination-related" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1"><img class="cover" src="/img/NiZhuanSiWei/fengmian.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">[ZJCTF 2019]NiZhuanSiWei1</div></div><div class="info-2"><div class="info-item-1">本文解析如何通过PHP伪协议和反序列化漏洞，绕过源码限制，利用data://和php://filter构造payload获得flag。</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/liang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Fantasy.</div><div class="author-info-description">A technology blog</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Relax-1626"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到Fantasy.的博客，如有错误及其他问题请大佬多多指教！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GYCTF2020-Blacklist1"><span class="toc-number">1.</span> <span class="toc-text">[GYCTF2020]Blacklist1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%A4%E4%BA%86-handler%EF%BC%8C%E6%83%B3%E8%A6%81%E7%BB%95%E8%BF%87-select%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BB%8E%E5%93%AA%E9%87%8C%E5%85%A5%E6%89%8B%E5%91%A2%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">除了 handler，想要绕过 select，可以从哪里入手呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A6%E5%A4%96%E8%A1%A5%E5%85%85%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%BB%95%E8%BF%87"><span class="toc-number">1.2.</span> <span class="toc-text">另外补充一些基础绕过</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable"><img src="/img/Cookieissostable/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[BJDCTF2020]Cookieissostable"/></a><div class="content"><a class="title" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable">[BJDCTF2020]Cookieissostable</a><time datetime="2026-04-22T01:53:45.000Z" title="发表于 2026-04-22 09:53:45">2026-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/03/GYCTF2020-Blacklist/" title="[GYCTF2020]Blacklist1"><img src="/img/Blacklist1/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[GYCTF2020]Blacklist1"/></a><div class="content"><a class="title" href="/2026/04/03/GYCTF2020-Blacklist/" title="[GYCTF2020]Blacklist1">[GYCTF2020]Blacklist1</a><time datetime="2026-04-03T02:18:36.000Z" title="发表于 2026-04-03 10:18:36">2026-04-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1"><img src="/img/NiZhuanSiWei/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[ZJCTF 2019]NiZhuanSiWei1"/></a><div class="content"><a class="title" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1">[ZJCTF 2019]NiZhuanSiWei1</a><time datetime="2026-04-01T02:57:38.000Z" title="发表于 2026-04-01 10:57:38">2026-04-01</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"></div><div class="footer_custom_text">萌新菜鸟希望有问题多多指正</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><!--if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pvscript(async data-pjax src=theme.asset.busuanzi ? url_for(theme.asset.busuanzi) : '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
 --></div></body></html>

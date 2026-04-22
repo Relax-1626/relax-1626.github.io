@@ -1,0 +1,17 @@
+/* 强制文章正文中的长文本自动换行 */
+.post-content p,
+.post-content li,
+.post-content div {
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+
+/* 让 <pre> 标签内的文本自动换行（解决横向滚动条） */
+#article-container pre,
+.post-content pre {
+    white-space: pre-wrap !important;   /* 保留空白，但允许自动换行 */
+    word-wrap: break-word !important;   /* 长单词/字符断行 */
+    overflow-x: auto;                   /* 保留横向滚动条以防万一（但换行后通常不会出现） */
+}
